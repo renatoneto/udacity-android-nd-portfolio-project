@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    protected void launchMyApp(CharSequence appName) {
+    protected void launchMyApp(String appName) {
 
         showToast(this, getText(R.string.portfolio_launch_info_text) + " " + appName);
 
