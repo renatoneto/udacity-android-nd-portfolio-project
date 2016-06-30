@@ -9,5 +9,6 @@
     <string name="portfolio_app_make_your_app_material">Make your app material</string>
     <string name="portfolio_app_go_ubiquitous">Go ubiquitous</string>
     <string name="portfolio_app_capstone">Capstone</string>
+    <string name="portfolio_launch_info_text">This button will launch my app</string>
 
 </resources>

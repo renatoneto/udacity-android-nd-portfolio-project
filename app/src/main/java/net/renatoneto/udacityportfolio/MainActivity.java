@@ -1,17 +1,16 @@
 package net.renatoneto.udacityportfolio;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    protected Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,81 +20,60 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Button popularMoviesButton = (Button)findViewById(R.id.launch_app_popular_movies);
-        popularMoviesButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                launchMyApp("popular movies");
-            }
-        });
+        popularMoviesButton.setOnClickListener(this);
 
         Button stockHawkButton = (Button)findViewById(R.id.launch_app_stock_hawk);
-        stockHawkButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                launchMyApp("stock hawk");
-            }
-        });
+        stockHawkButton.setOnClickListener(this);
 
         Button buildItBiggerButton = (Button)findViewById(R.id.launch_app_build_it_bigger);
-        buildItBiggerButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                launchMyApp("build it bigger");
-            }
-        });
+        buildItBiggerButton.setOnClickListener(this);
 
         Button makeYourAppMaterialButton = (Button)findViewById(R.id.launch_app_make_your_app_material);
-        makeYourAppMaterialButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                launchMyApp("make your app material");
-            }
-        });
+        makeYourAppMaterialButton.setOnClickListener(this);
 
         Button goUbiquitousButton = (Button)findViewById(R.id.launch_app_go_ubiquitous);
-        goUbiquitousButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                launchMyApp("go ubiquitous");
-            }
-        });
+        goUbiquitousButton.setOnClickListener(this);
 
         Button capstoneButton = (Button)findViewById(R.id.launch_app_capstone);
-        capstoneButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                launchMyApp("capstone");
-            }
-        });
+        capstoneButton.setOnClickListener(this);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.launch_app_popular_movies:
+            case R.id.launch_app_stock_hawk:
+            case R.id.launch_app_build_it_bigger:
+            case R.id.launch_app_make_your_app_material:
+            case R.id.launch_app_go_ubiquitous:
+            case R.id.launch_app_capstone:
+
+                Button button = (Button) v;
+                String text   = button.getText().toString();
+
+                launchMyApp(text);
+                break;
+
+        }
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    protected void launchMyApp(CharSequence appName) {
 
-        return super.onOptionsItemSelected(item);
+        showToast(this, getText(R.string.portfolio_launch_info_text) + " " + appName);
+
     }
 
-    protected void launchMyApp(String appName) {
+    protected void showToast(Context context, String message) {
 
-        Toast.makeText(getApplicationContext(), "This button will launch my " + appName + " app!",
-                Toast.LENGTH_SHORT).show();
+        if (toast != null) {
+            toast.cancel();
+        }
+
+        toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+        toast.show();
 
     }
 

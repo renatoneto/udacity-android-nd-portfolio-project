@@ -23,7 +23,7 @@
             android:textSize="@dimen/portofolio_title_text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/portofolio_title_margin_bottom"
+            android:layout_marginBottom="@dimen/portofolio_button_margin_bottom"
             android:text="@string/portfolio_title" />
 
         <Button
@@ -31,48 +31,54 @@
             android:layout_width="@dimen/portofolio_app_button_width"
             android:layout_height="wrap_content"
             android:text="@string/portfolio_app_popupar_movies"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimaryDark" />
+            android:layout_marginBottom="@dimen/portofolio_button_margin_bottom"
+            android:background="@drawable/launch_app_button_shape"
+            android:textColor="@color/launchButtonTextColor" />
 
         <Button
             android:id="@+id/launch_app_stock_hawk"
             android:layout_width="@dimen/portofolio_app_button_width"
             android:layout_height="wrap_content"
             android:text="@string/portfolio_app_stock_hawk"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimaryDark" />
+            android:layout_marginBottom="@dimen/portofolio_button_margin_bottom"
+            android:background="@drawable/launch_app_button_shape"
+            android:textColor="@color/launchButtonTextColor" />
 
         <Button
             android:id="@+id/launch_app_build_it_bigger"
             android:layout_width="@dimen/portofolio_app_button_width"
             android:layout_height="wrap_content"
             android:text="@string/portfolio_app_build_it_bigger"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimaryDark" />
+            android:layout_marginBottom="@dimen/portofolio_button_margin_bottom"
+            android:background="@drawable/launch_app_button_shape"
+            android:textColor="@color/launchButtonTextColor" />
 
         <Button
             android:id="@+id/launch_app_make_your_app_material"
             android:layout_width="@dimen/portofolio_app_button_width"
             android:layout_height="wrap_content"
             android:text="@string/portfolio_app_make_your_app_material"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimaryDark" />
+            android:layout_marginBottom="@dimen/portofolio_button_margin_bottom"
+            android:background="@drawable/launch_app_button_shape"
+            android:textColor="@color/launchButtonTextColor" />
 
         <Button
             android:id="@+id/launch_app_go_ubiquitous"
             android:layout_width="@dimen/portofolio_app_button_width"
             android:layout_height="wrap_content"
             android:text="@string/portfolio_app_go_ubiquitous"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimaryDark" />
+            android:layout_marginBottom="@dimen/portofolio_button_margin_bottom"
+            android:background="@drawable/launch_app_button_shape"
+            android:textColor="@color/launchButtonTextColor" />
 
         <Button
             android:id="@+id/launch_app_capstone"
             android:layout_width="@dimen/portofolio_app_button_width"
             android:layout_height="wrap_content"
             android:text="@string/portfolio_app_capstone"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimaryDark" />
+            android:layout_marginBottom="@dimen/portofolio_button_margin_bottom"
+            android:background="@drawable/launch_app_button_shape"
+            android:textColor="@color/launchButtonTextColor" />
 
     </LinearLayout>
 
